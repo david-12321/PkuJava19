@@ -147,9 +147,10 @@ public class GobangGame {
 			
 			String board[][] = chessboard.getBoard();
 			
-//		定义得分数组分别用来记录每个格子的得分，Wscore[x][y][n],Bscore[x][y][n]其中n为0-5，0-3分别依次代表横，竖，右斜，左斜四个方向,4为该坐标最大得分
+//	定义得分数组分别用来记录每个格子的得分，Wscore[x][y][n],Bscore[x][y][n]其中n为0-5，0-3分别依次代表横，竖，右斜，左斜四个方向,4为该坐标最大得分
 			int Wscore[][][] = new int [Chessboard.BOARD_SIZE][Chessboard.BOARD_SIZE][5];
 			int Bscore[][][] = new int [Chessboard.BOARD_SIZE][Chessboard.BOARD_SIZE][5];
+//	棋型评分标准：从0-4连子得分分别为{0，100，400，2000，10000}
 			int scoreStandard[] = {0,100,400,2000,10000};
 			int flag = 0;
 			
@@ -397,9 +398,7 @@ public class GobangGame {
 						}
 					}
 				}
-			}
-			
-//		棋型评分标准：从0-4连子得分分别为{0，100，400，2000，10000}			
+			}			
 			int [] result = {posX, posY};
 			return result;
 		}
